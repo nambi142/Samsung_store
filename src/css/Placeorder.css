@@ -1,0 +1,62 @@
+.orderconfirm {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 40px 50px;
+  background-color: #1C1C1C; /* Deep dark background to match header */
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15); /* Subtle gold glow */
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeIn 0.6s ease-in-out;
+  color: #fff;
+}
+
+.orderconfirm h1 {
+  font-size: 32px;
+  color: #D4AF37; /* Gold highlight like in header */
+  margin-bottom: 20px;
+}
+
+.orderconfirm p {
+  font-size: 18px;
+  color: #ccc; /* Light grey text for readability */
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.address{
+  text-decoration: none;
+  color: #D4AF37;
+  font-size: 25px;
+}
+.address:hover{
+  color:#fff;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .orderconfirm {
+    padding: 30px 20px;
+    margin: 60px 20px;
+  }
+
+  .orderconfirm h1 {
+    font-size: 26px;
+  }
+
+  .orderconfirm p {
+    font-size: 16px;
+  }
+}

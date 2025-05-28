@@ -1,0 +1,82 @@
+.about-store {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 50px 24px;
+  background-color: #1C1C1C;
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.8;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.about-store h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #D4AF37;
+  text-align: center;
+  border-bottom: 2px solid #D4AF37;
+  padding-bottom: 10px;
+}
+
+.about-store h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  color: #D4AF37;
+}
+
+.about-store h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 32px;
+  color: #fff;
+}
+
+.about-store p {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  color: #ddd;
+}
+
+.about-store ul {
+  padding-left: 20px;
+  margin-bottom: 24px;
+}
+
+.about-store li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.about-store strong {
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-store {
+    padding: 30px 16px;
+    margin: 30px 10px;
+  }
+
+  .about-store h1 {
+    font-size: 2rem;
+  }
+
+  .about-store h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-store h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-store p, .about-store li {
+    font-size: 0.95rem;
+  }
+}
