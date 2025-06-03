@@ -4,24 +4,23 @@ import "../css/Home.css";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const {
-    sliderImages,
-    currentIndex,
-    goToPrev,
-    goToNext,
-    goToSlide,
-  } = useContext(StoreContext);
+  const { sliderImages, currentIndex, goToPrev, goToNext, goToSlide } =
+    useContext(StoreContext);
 
   return (
     <div className="home">
       <main className="home-main">
         <div className="slider-container">
-          {sliderImages.length > 0 && (
+          {sliderImages.length > 0 ? (
             <img
-              src={process.env.PUBLIC_URL + "/" + sliderImages[currentIndex].image}
+              src={
+                process.env.PUBLIC_URL + "/" + sliderImages[currentIndex].image
+              }
               alt={sliderImages[currentIndex].name}
               className="slider-image"
             />
+          ) : (
+            <p>Loading slider...</p>
           )}
 
           <button className="nav prev" onClick={goToPrev}>
@@ -57,24 +56,34 @@ const Home = () => {
         <h2>New Arrivals</h2>
         <div className="showcase-images">
           <div className="showbox">
-           <Link to="/Mobile" className="path"><img src="/img/galaxy-s24.png" alt="mobile"/>
-            <p>Galaxy-S-24</p></Link>
+            <Link to="/Mobile" className="path">
+              <img src="/img/galaxy-s24.png" alt="mobile" />
+              <p>Galaxy-S-24</p>
+            </Link>
           </div>
           <div className="showbox">
-            <Link to="/Mobile" className="path"><img src="/img/galaxy-s25.png" alt="mobile"/>
-            <p>Galaxy-S-25</p></Link>
+            <Link to="/Mobile" className="path">
+              <img src="/img/galaxy-s25.png" alt="mobile" />
+              <p>Galaxy-S-25</p>
+            </Link>
           </div>
           <div className="showbox">
-            <Link to="/Mobile" className="path"><img src="/img/galaxy-s25pro.png" alt="mobile"/>
-            <p>Galaxy-S-Pro</p></Link>
+            <Link to="/Mobile" className="path">
+              <img src="/img/galaxy-s25pro.png" alt="mobile" />
+              <p>Galaxy-S-Pro</p>
+            </Link>
           </div>
           <div className="showbox">
-            <Link to="/Mobile" className="path"><img src="/img/galaxy-z-fold6.png" alt="mobile"/>
-            <p>Galaxy-Z-fold6</p></Link>
+            <Link to="/Mobile" className="path">
+              <img src="/img/galaxy-z-fold6.png" alt="mobile" />
+              <p>Galaxy-Z-fold6</p>
+            </Link>
           </div>
           <div className="showbox">
-            <Link to="/Mobile" className="path"><img src="/img/galaxy-a35.png" alt="mobile"/>
-            <p>Galaxy-a35</p></Link>
+            <Link to="/Mobile" className="path">
+              <img src="/img/galaxy-a35.png" alt="mobile" />
+              <p>Galaxy-a35</p>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import sliderData from "../pages/SliderImages";
 
 export const StoreContext = createContext();
 
@@ -20,7 +21,7 @@ const Store = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
 
   //Home Slider & Showcase
-  const [sliderImages, setSliderImages] = useState([]);
+ const [sliderImages, setSliderImages] = useState(sliderData);
   const [showcase, setShowCase] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   
@@ -88,8 +89,6 @@ const handleSubmit = async (e) => {
 };
 
 
-
-
   // Checkout form data
   const [user, setUser] = useState({
     name: "",
@@ -97,21 +96,7 @@ const handleSubmit = async (e) => {
     mobile: "",
   });
 
-  // --- Effects ---
-
-  // Fetch slider images
-  useEffect(() => {
-    const fetchSliderImages = async () => {
-      try {
-        const res = await axios.get(`${BASE_URL}/sliderImages`);
-        setSliderImages(res.data);
-      } catch (err) {
-        console.error("Failed to fetch slider images:", err);
-      }
-    };
-    fetchSliderImages();
-  }, []);
-  
+ 
   // Auto change slider
   useEffect(() => {
     if (sliderImages.length === 0) return;
@@ -131,7 +116,14 @@ const handleSubmit = async (e) => {
     setTotal(totalAmount);
   }, [cart]);
 
-  // --- Handlers and functions ---
+  //Preload slider images
+  useEffect(() => {
+  sliderImages.forEach((img) => {
+    const preload = new Image();
+    preload.src = process.env.PUBLIC_URL + "/" + img.image;
+  });
+}, [sliderImages]);
+
 
   // Slider controls
   const goToPrev = () =>
@@ -187,10 +179,6 @@ const handleSubmit = async (e) => {
       navigate("/LogIn");
     }
   };
-
-
- 
-  
 
   return (
     <StoreContext.Provider
