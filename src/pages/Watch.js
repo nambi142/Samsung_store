@@ -20,7 +20,7 @@ const Watches = () => {
         setError("Failed to fetch mobiles");
         console.error(err);
       });
-  }, [setProducts, setError]);
+  }, [BASE_URL,setProducts, setError]);
 
   if (!products) return <p>Loading...</p>;
 

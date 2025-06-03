@@ -21,7 +21,7 @@ const ProductView = () => {
         setError("Failed to fetch product details");
         console.error(err);
       });
-  }, [category, id]);
+  }, [BASE_URL,category, id]);
 
   if (error) return <p>{error}</p>;
   if (!product) return <p>Loading...</p>;
