@@ -62,7 +62,7 @@ const Footer = () => {
                 </Link>
               </p>
               <p>
-                <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRwRPzPDKGglbdwRlZcmkCJFHnFJzcwTfJDjVWgJKBWZMWbcgVkNtdHPvFBmVVBLCVqRLfMN">
+                <a href="mailto:muthu142001@gmail.com">
                 <SiGmail />
                 </a>
               </p>

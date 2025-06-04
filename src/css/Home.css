@@ -230,3 +230,78 @@
   }
 }
 
+/* Landscape Responsive Styles */
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  .slider-container {
+    height: 300px;
+  }
+
+  .slider-image {
+    object-fit: cover;
+  }
+
+  .login {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .bt {
+    width: 110px;
+    padding: 6px;
+    font-size: 15px;
+  }
+
+  .showcase {
+    padding: 15px;
+  }
+
+  .showcase h2 {
+    font-size: 22px;
+  }
+
+  .showcase-images {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .showcase-images img {
+    width: 180px;
+    height: auto;
+  }
+
+  .showcase-images p {
+    font-size: 14px;
+  }
+
+  .showbox {
+    margin: 10px;
+    width: 180px;
+  }
+
+  .nav {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .prev {
+    left: 12px;
+  }
+
+  .next {
+    right: 12px;
+  }
+
+  .dot {
+    width: 11px;
+    height: 11px;
+  }
+
+  .dot.active {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+
