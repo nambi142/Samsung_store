@@ -7,7 +7,7 @@ import "../css/Products.css";
 
 const Mobiles = () => {
   const BASE_URL = process.env.REACT_APP_API_BASE_URL;
-  const { addToCart, products, setProducts, setError } =
+  const { addToCart, products, setProducts, setErrMsg } =
     useContext(StoreContext);
 
   useEffect(() => {
@@ -17,10 +17,10 @@ const Mobiles = () => {
         setProducts(response.data || []);      
       })
       .catch((err) => {
-        setError("Failed to fetch mobiles");
+        setErrMsg("Failed to fetch mobiles");
         console.error(err);
       });
-  }, [BASE_URL,setProducts, setError]);
+  }, [BASE_URL,setProducts, setErrMsg]);
 
   if (!products) return <p>Loading...</p>;
 

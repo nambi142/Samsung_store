@@ -216,3 +216,173 @@
   cursor: pointer;
 }
 }
+
+/* Landscape Mode (for devices with landscape orientation) */
+@media screen and (orientation: landscape) and (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 10px;
+  }
+
+  .brand {
+    font-size: 4rem;
+  }
+
+  .hamburger {
+    font-size: 1.8rem;
+  }
+
+  .link {
+    font-size: 0.9rem;
+  }
+
+  .link-cart {
+    font-size: 1rem;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .cart-count {
+    font-size: 8px;
+    padding: 1px 3px;
+  }
+
+  .search-form {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .search-input {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .search-btn {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+
+  .sidebar {
+    width: 65%;
+    max-width: 260px;
+  }
+
+  .sidebar-nav {
+    gap: 15px;
+  }
+
+  .Login,
+  .Logout {
+    font-size: 1rem;
+  }
+
+  .welcome {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    color: #D4AF37;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    padding: 0 15px;
+  }
+
+  .brand {
+    font-size: 5rem;
+  }
+
+  .link {
+    font-size: 1rem;
+  }
+
+  .link-cart {
+    font-size: 1.3rem;
+    justify-content: flex-start;
+  }
+
+  .icon {
+    font-size: 22px;
+  }
+
+  .cart-count {
+    font-size: 9px;
+    padding: 2px 4px;
+    top: -5px;
+    right: -8px;
+  }
+
+  .search-form {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    position: relative;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+    width: 220px;
+    padding: 6px 30px 6px 10px;
+    border-radius: 4px;
+    border: 1px solid #888;
+  }
+
+  .search-btn {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    background-color: #D4AF37;
+    border: none;
+    padding: 4px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .sidebar {
+    width: 70%;
+    max-width: 280px;
+  }
+
+  .sidebar-nav {
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .Login,
+  .Logout {
+    font-size: 1rem;
+  }
+
+  .welcome {
+    font-size: 0.95rem;
+  }
+
+  .close-btn {
+    font-size: 1.8rem;
+  }
+}
+

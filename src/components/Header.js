@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef, useEffect  } from "react";
 import "../css/Header.css";
 import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineShoppingBag } from "react-icons/md";
@@ -17,6 +17,8 @@ const Header = () => {
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const sidebarRef = useRef(null);
+
 
   const navigate = useNavigate();
 
@@ -53,6 +55,29 @@ const Header = () => {
       alert("Error occurred while searching");
     }
   };
+
+  // ✅ Close sidebar on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isSidebarOpen &&
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target)
+      ) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [isSidebarOpen]);
+
+
 
   return (
     <header className="header">
@@ -131,47 +156,35 @@ const Header = () => {
         )}
       </nav>
 
-      {/* Mobile Menu Button */}
+       {/* Mobile Menu Button */}
       <button className="hamburger" onClick={() => setIsSidebarOpen(true)}>
         <GiHamburgerMenu />
       </button>
 
       {/* Sidebar Menu */}
-      <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
+      <div
+        className={`sidebar ${isSidebarOpen ? "open" : ""}`}
+        ref={sidebarRef}
+      >
         <button className="close-btn" onClick={() => setIsSidebarOpen(false)}>
           <IoMdClose />
         </button>
+
         <nav className="sidebar-nav">
           <SiSamsung className="brand" />
           <Link className="link" to="/" onClick={() => setIsSidebarOpen(false)}>
             Home
           </Link>
-          <Link
-            className="link"
-            to="/Mobile"
-            onClick={() => setIsSidebarOpen(false)}
-          >
+          <Link className="link" to="/Mobile" onClick={() => setIsSidebarOpen(false)}>
             Mobiles
           </Link>
-          <Link
-            className="link"
-            to="/Watch"
-            onClick={() => setIsSidebarOpen(false)}
-          >
+          <Link className="link" to="/Watch" onClick={() => setIsSidebarOpen(false)}>
             SmartThings
           </Link>
-          <Link
-            className="link"
-            to="/Contact"
-            onClick={() => setIsSidebarOpen(false)}
-          >
+          <Link className="link" to="/Contact" onClick={() => setIsSidebarOpen(false)}>
             Contact
           </Link>
-          <Link
-            className="link"
-            to="/About"
-            onClick={() => setIsSidebarOpen(false)}
-          >
+          <Link className="link" to="/About" onClick={() => setIsSidebarOpen(false)}>
             About
           </Link>
 
@@ -184,15 +197,11 @@ const Header = () => {
               className="search-input"
             />
             <button type="submit" className="search-btn">
-             <CiSearch />
+              <CiSearch />
             </button>
           </form>
 
-          <Link
-            className="link-cart"
-            to="/Cart"
-            onClick={() => setIsSidebarOpen(false)}
-          >
+          <Link className="link-cart" to="/Cart" onClick={() => setIsSidebarOpen(false)}>
             <MdOutlineShoppingBag className="icon" />
             {cart.length > 0 && (
               <span className="cart-count">{cart.length}</span>
@@ -200,11 +209,7 @@ const Header = () => {
           </Link>
 
           {!isLoggedIn ? (
-            <Link
-              className="Login"
-              to="/LogIn"
-              onClick={() => setIsSidebarOpen(false)}
-            >
+            <Link className="Login" to="/LogIn" onClick={() => setIsSidebarOpen(false)}>
               <SlLogin />
             </Link>
           ) : (

@@ -58,47 +58,71 @@
   font-weight: 600; 
 }
 
-/* Showcase Section */
-.showcase{
+.showcase {
   display: flex;
   flex-direction: column;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
   background-color: #1C1C1C;
   margin: 0 0 5px;
+  padding: 20px;
 }
 
 .showcase h2 {
   font-weight: bold;
   color: #D4AF37;
+  font-size: 28px;
+  text-align: center;
 }
 
-.showcase-images{
+.showcase-images {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 1400px;
 }
-.showcase-images img{
+
+/* Each Product Box */
+.showbox {
+  background-color: gray;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
   width: 200px;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
-.showcase-images p{
+
+.showbox:hover {
+  transform: translateY(-8px);
+}
+
+/* Image Inside Box */
+.showbox img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Product Name */
+.showcase-images p {
   font-size: 15px;
   font-weight: bold;
   color: #fff;
+  margin-top: 8px;
 }
-.showbox{
-  background-color: gray;
-  margin: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-}
-.path{
+
+/* Link */
+.path {
   text-decoration: none;
 }
 
@@ -192,19 +216,20 @@
     gap: 15px;
   }
 
-  .showcase-images img {
-    width: 80%;
+  .showbox {
+    width: 90%;
     max-width: 300px;
+    margin: 10px 0;
+  }
+
+  .showbox img {
+    width: 100%;
   }
 
   .showcase-images p {
     font-size: 14px;
   }
-
-  .showbox {
-    margin: 10px 0;
-    width: 90%;
-  }
+}
 
   .nav {
     padding: 6px 10px;
@@ -224,10 +249,9 @@
     height: 10px;
   }
 
-  .dot.active {
-    width: 12px;
-    height: 12px;
-  }
+.dot.active {
+  width: 12px;
+  height: 12px;
 }
 
 /* Landscape Responsive Styles */
@@ -251,10 +275,6 @@
     font-size: 15px;
   }
 
-  .showcase {
-    padding: 15px;
-  }
-
   .showcase h2 {
     font-size: 22px;
   }
@@ -263,21 +283,20 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
   }
 
-  .showcase-images img {
+  .showbox {
     width: 180px;
-    height: auto;
+    margin: 10px;
+  }
+
+  .showbox img {
+    width: 100%;
   }
 
   .showcase-images p {
     font-size: 14px;
-  }
-
-  .showbox {
-    margin: 10px;
-    width: 180px;
   }
 
   .nav {
@@ -304,4 +323,22 @@
   }
 }
 
+/* 💻 Desktop View */
+@media (min-width: 1024px) {
+  .showcase h2 {
+    font-size: 32px;
+  }
+
+  .showbox {
+    width: 220px;
+  }
+
+  .showbox img {
+    width: 100%;
+  }
+
+  .showcase-images p {
+    font-size: 16px;
+  }
+}
 
